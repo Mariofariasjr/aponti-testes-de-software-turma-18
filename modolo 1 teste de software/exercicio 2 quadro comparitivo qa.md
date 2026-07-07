@@ -1,5 +1,6 @@
-```markdown
 # Quadro Comparativo – Práticas Tradicionais de QA x Práticas Modernas
+
+## Comparação
 
 | **Práticas Tradicionais de QA** | **Práticas Modernas de QA** |
 |---------------------------------|-----------------------------|
@@ -18,68 +19,75 @@
 
 ## Agile Testing
 
-**Objetivo:** Integrar os testes ao processo ágil de desenvolvimento.
+### O que é?
+O Agile Testing é uma abordagem em que os testes acompanham todo o processo de desenvolvimento dentro das metodologias ágeis. Em vez de testar apenas no final, o QA participa desde o planejamento até a entrega do produto.
 
-**Características:**
-- Os testes acompanham o desenvolvimento em cada Sprint.
-- QA participa desde o planejamento até a entrega.
-- Feedback rápido para a equipe.
-- Qualidade é responsabilidade de todos.
+### Principais características
+- Testes contínuos durante cada Sprint.
+- Participação ativa do QA em todas as etapas.
+- Feedback rápido para os desenvolvedores.
+- Qualidade compartilhada por toda a equipe.
 
-**Benefícios:**
-- Detecção antecipada de defeitos.
-- Redução de retrabalho.
+### Benefícios
+- Identificação rápida de defeitos.
+- Menor retrabalho.
 - Entregas mais frequentes e com maior qualidade.
 
 ---
 
 ## Automação de Testes
 
-**Objetivo:** Automatizar a execução de testes repetitivos para aumentar a eficiência.
+### O que é?
+Consiste na utilização de ferramentas para executar testes automaticamente, reduzindo tarefas repetitivas e aumentando a eficiência do processo de validação.
 
-**Características:**
-- Execução automática de testes.
-- Pode ser integrada ao pipeline de CI/CD.
-- Reduz erros humanos.
-- Permite testes frequentes.
+### Principais características
+- Execução automática dos testes.
+- Integração com pipelines de CI/CD.
+- Redução de erros humanos.
+- Reutilização de scripts de teste.
 
-**Benefícios:**
-- Maior velocidade nas validações.
+### Benefícios
+- Maior velocidade na execução.
 - Economia de tempo.
-- Mais confiabilidade nas entregas.
+- Maior confiabilidade dos resultados.
+- Facilidade para testes de regressão.
 
 ---
 
 ## Shift Left
 
-**Objetivo:** Antecipar os testes para as fases iniciais do desenvolvimento.
+### O que é?
+Shift Left é a prática de antecipar os testes para as fases iniciais do desenvolvimento, permitindo identificar defeitos antes que eles se tornem mais caros de corrigir.
 
-**Características:**
-- Os testes começam desde a análise dos requisitos.
-- QA participa desde o início do projeto.
-- Problemas são encontrados antes da implementação completa.
+### Principais características
+- Testes desde a análise dos requisitos.
+- Participação do QA desde o início do projeto.
+- Validação contínua durante o desenvolvimento.
 
-**Benefícios:**
-- Menor custo para corrigir defeitos.
-- Redução de retrabalho.
+### Benefícios
+- Redução de custos.
+- Menor retrabalho.
 - Melhor qualidade do software.
+- Maior colaboração entre as equipes.
 
 ---
 
 ## DevSecTestOps
 
-**Objetivo:** Integrar Desenvolvimento, Segurança, Testes e Operações em um processo contínuo.
+### O que é?
+DevSecTestOps integra Desenvolvimento (Dev), Segurança (Sec), Testes (Test) e Operações (Ops), garantindo que qualidade e segurança façam parte de todo o ciclo de desenvolvimento.
 
-**Características:**
-- Segurança incorporada desde o início do projeto.
+### Principais características
+- Segurança desde o início do projeto.
 - Automação de testes funcionais e de segurança.
-- Integração com pipelines de CI/CD.
+- Integração contínua (CI/CD).
 - Colaboração entre todas as equipes.
 
-**Benefícios:**
-- Softwares mais seguros.
-- Maior confiabilidade.
-- Entregas rápidas sem comprometer a qualidade.
+### Benefícios
+- Aplicações mais seguras.
+- Redução de vulnerabilidades.
+- Entregas rápidas e confiáveis.
+- Maior qualidade do software.
 
 ---
 
@@ -87,9 +95,14 @@
 
 ## Quais desafios atuais de QA mais impactam projetos reais?
 
-Os desafios atuais da área de Qualidade de Software (QA) estão diretamente relacionados à necessidade de entregar aplicações cada vez mais rápidas, seguras e confiáveis. Com a adoção das metodologias ágeis, as equipes precisam validar funcionalidades em ciclos curtos, exigindo processos eficientes e bem organizados.
+A área de Qualidade de Software evoluiu bastante nos últimos anos. Atualmente, um dos maiores desafios é acompanhar a velocidade das entregas sem comprometer a qualidade do produto. As metodologias ágeis exigem ciclos de desenvolvimento curtos, o que torna indispensável a utilização de testes automatizados e processos bem definidos.
 
-Outro grande desafio é acompanhar a evolução tecnológica. Ferramentas de automação, integração contínua (CI/CD), testes em múltiplos dispositivos e práticas como Shift Left e DevSecTestOps tornaram-se fundamentais para garantir a qualidade do software. Além disso, os profissionais de QA precisam atualizar constantemente seus conhecimentos para acompanhar novas tecnologias e metodologias.
+Outro desafio importante é acompanhar a constante evolução das tecnologias. Os profissionais de QA precisam dominar ferramentas de automação, integração contínua (CI/CD), testes em diferentes plataformas e práticas modernas como Shift Left e DevSecTestOps.
 
-Na minha opinião, o maior impacto nos projetos reais é equilibrar velocidade de entrega com qualidade e segurança. Por isso, a automação de testes, a integração entre equipes e a participação do QA desde o início do desenvolvimento são práticas essenciais para reduzir falhas, diminuir retrabalho e aumentar a satisfação dos usuários finais.
-```
+Na minha opinião, o principal desafio dos projetos atuais é equilibrar rapidez, qualidade e segurança. Para isso, o QA deve atuar desde o início do desenvolvimento, colaborando com toda a equipe e utilizando automação para reduzir falhas e retrabalho. Dessa forma, é possível entregar softwares mais confiáveis, seguros e com maior satisfação para os usuários.
+
+---
+
+## Conclusão
+
+As práticas tradicionais de QA foram importantes para a evolução da qualidade de software, porém as práticas modernas oferecem maior agilidade, integração e eficiência. Metodologias como Agile Testing, Automação, Shift Left e DevSecTestOps permitem identificar problemas mais cedo, reduzir custos, melhorar a colaboração entre as equipes e entregar produtos de maior qualidade em menos tempo.
