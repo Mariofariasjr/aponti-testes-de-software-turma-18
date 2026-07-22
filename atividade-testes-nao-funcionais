@@ -1,0 +1,69 @@
+# Atividade Avaliativa - Testes Não Funcionais
+
+## Objetivo
+
+Elaborar um checklist de testes não funcionais para o sistema fictício **PACO (Plataforma de Agendamento de Consultas)**, cobrindo os seguintes tipos de testes:
+
+- Performance
+- Segurança
+- Usabilidade
+- Compatibilidade
+
+Cada item do checklist informa o que será verificado e o risco associado caso o requisito não seja atendido.
+
+---
+
+# Sistema Avaliado
+
+**PACO - Plataforma de Agendamento de Consultas**
+
+O sistema permite que usuários realizem o agendamento de consultas médicas pela web, enquanto administradores gerenciam horários e atendimentos.
+
+## Principais funcionalidades
+
+- Cadastro e autenticação de usuários
+- Consulta de especialidades e profissionais
+- Agendamento, cancelamento e visualização de consultas
+- Notificações de confirmação
+- Área administrativa para gestão de horários
+
+---
+
+# Checklist de Testes Não Funcionais
+
+| Categoria | O que será verificado | Risco associado |
+|------------|-----------------------|-----------------|
+| **Performance** | Tempo de carregamento da tela inicial e do login. | Lentidão pode fazer o usuário abandonar o sistema. |
+| **Performance** | Tempo para realizar um agendamento de consulta. | Usuário pode acreditar que o agendamento falhou e tentar novamente, gerando duplicidade. |
+| **Performance** | Funcionamento do sistema com muitos usuários acessando ao mesmo tempo (horários de pico). | Quedas, travamentos ou indisponibilidade do sistema. |
+| **Performance** | Tempo de resposta da busca por médicos e especialidades. | Pesquisa lenta prejudica a experiência do usuário. |
+| **Segurança** | Verificar se apenas usuários autenticados conseguem agendar consultas. | Usuários não autorizados podem acessar funcionalidades restritas. |
+| **Segurança** | Validação da senha e autenticação de login. | Acesso indevido às contas dos usuários. |
+| **Segurança** | Proteção dos dados pessoais dos pacientes (LGPD). | Vazamento de informações confidenciais. |
+| **Segurança** | Testar tentativas de acesso com senha incorreta repetidas vezes. | Possibilidade de ataques de força bruta. |
+| **Segurança** | Garantir que usuários comuns não acessem a área administrativa. | Alterações indevidas nos horários e atendimentos. |
+| **Usabilidade** | Interface simples e intuitiva para agendamento. | Usuários podem ter dificuldade em utilizar o sistema. |
+| **Usabilidade** | Clareza das mensagens de erro e confirmação. | Confusão durante o uso da plataforma. |
+| **Usabilidade** | Facilidade para cancelar consultas conforme as regras do sistema. | Usuário pode não conseguir concluir a operação corretamente. |
+| **Usabilidade** | Legibilidade dos textos, botões e menus. | Dificuldade de navegação e aumento de erros. |
+| **Compatibilidade** | Funcionamento nos navegadores Chrome, Edge e Firefox. | Algumas funcionalidades podem não funcionar em determinados navegadores. |
+| **Compatibilidade** | Funcionamento em computadores, tablets e celulares. | Usuários podem ter problemas de acesso em diferentes dispositivos. |
+| **Compatibilidade** | Adaptação da interface em diferentes tamanhos de tela (responsividade). | Layout quebrado ou botões inacessíveis. |
+| **Compatibilidade** | Compatibilidade com diferentes versões dos sistemas operacionais. | Inconsistências na execução da aplicação. |
+
+---
+
+# Conclusão
+
+Os testes não funcionais são essenciais para garantir que o sistema ofereça qualidade além das funcionalidades previstas. Eles avaliam desempenho, segurança, facilidade de uso e compatibilidade, reduzindo riscos como lentidão, falhas de segurança, dificuldades de navegação e problemas de funcionamento em diferentes dispositivos e navegadores.
+
+A realização desses testes aumenta a confiabilidade da plataforma e proporciona uma melhor experiência aos usuários.
+
+---
+
+## Autor
+
+**Mario Marinho**  
+Curso: Análise e Desenvolvimento de Sistemas  
+Disciplina: Teste de Software – QA  
+Instituição: IMES / Aponti Academy
