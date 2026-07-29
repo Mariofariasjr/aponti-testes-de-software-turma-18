@@ -1,0 +1,144 @@
+Conteúdo padrão:
+1 - ID
+2 - Título
+3 - Pré-condições
+4 - Passos
+5 - Resultado esperado
+
+
+
+---
+
+### Cenários de Sucesso (O Caminho Feliz e Variações)
+
+**Caso 1 - ID: CT-001**
+*   **Título:** Login com sucesso usando credenciais válidas.
+*   **Pré-condições:** Estar na tela de login do sistema. Possuir um cadastro ativo (ex: usuario_teste / Senha@123).
+*   **Passos:**
+    1. Preencher o campo "Usuário" com "usuario_teste".
+    2. Preencher o campo "Senha" com "Senha@123".
+    3. Clicar no botão "Entrar".
+*   **Resultado esperado:** Sistema redireciona para a tela inicial (Dashboard). O nome do usuário logado aparece no canto superior direito.
+
+---
+
+**Caso 2 - ID: CT-002**
+*   **Título:** Login utilizando a tecla "Enter" para submeter os dados.
+*   **Pré-condições:** Estar na tela de login com campos habilitados.
+*   **Passos:**
+    1. Preencher o campo "Usuário" com dados válidos.
+    2. Preencher o campo "Senha" com dados válidos.
+    3. Pressionar a tecla "Enter" do teclado.
+*   **Resultado esperado:** Sistema processa o login e redireciona para a tela inicial, assim como se tivesse clicado no botão.
+
+---
+
+**Caso 3 - ID: CT-003**
+*   **Título:** Visualização da máscara de senha (ocultar caracteres).
+*   **Pré-condições:** Estar na tela de login.
+*   **Passos:**
+    1. Clicar no campo "Senha".
+    2. Digitar a senha "Senha@123".
+    3. Observar o campo durante a digitação.
+*   **Resultado esperado:** Durante a digitação, os caracteres aparecem como pontos (••••••••) ou asteriscos (****), não sendo exibido o texto plano da senha.
+
+---
+
+**Caso 4 - ID: CT-004**
+*   **Título:** Login com usuário contendo espaços antes do texto (Trim automático).
+*   **Pré-condições:** Cadastro ativo (usuario_teste).
+*   **Passos:**
+    1. Preencher o campo "Usuário" com " usuario_teste" (com um espaço antes).
+    2. Preencher o campo "Senha" com a senha correta.
+    3. Clicar em "Entrar".
+*   **Resultado esperado:** Sistema ignora o espaço em branco no início, reconhece o usuário e realiza o login com sucesso.
+
+---
+
+**Caso 5 - ID: CT-005**
+*   **Título:** Login com senha contendo caracteres especiais válidos.
+*   **Pré-condições:** Cadastro ativo com senha forte (ex: Teste#2024).
+*   **Passos:**
+    1. Preencher o usuário correto.
+    2. Preencher a senha exatamente como cadastrada: "Teste#2024".
+    3. Clicar em "Entrar".
+*   **Resultado esperado:** Sistema aceita os caracteres especiais (#) e realiza o login normalmente, sem apresentar erros de codificação.
+
+---
+
+### Cenários de Falha / Alternativos (Fora da Caixinha)
+
+**Caso 6 - ID: CT-006**
+*   **Título:** Tentativa de login com usuário cadastrado, porém senha incorreta.
+*   **Pré-condições:** Saber que o usuário "joao.silva" existe.
+*   **Passos:**
+    1. Preencher o campo "Usuário" com "joao.silva".
+    2. Preencher o campo "Senha" com "SenhaErrada123".
+    3. Clicar em "Entrar".
+*   **Resultado esperado:** Sistema exibe mensagem de erro clara: "Usuário ou senha inválidos". O sistema **não** deve especificar se o erro é no usuário ou na senha (por segurança) e a página não deve ser recarregada.
+
+---
+
+**Caso 7 - ID: CT-007**
+*   **Título:** Tentativa de login com usuário inexistente no sistema.
+*   **Pré-condições:** Nenhuma.
+*   **Passos:**
+    1. Preencher o campo "Usuário" com "usuario_que_nao_existe".
+    2. Preencher o campo "Senha" com "qualquer_senha".
+    3. Clicar em "Entrar".
+*   **Resultado esperado:** Sistema exibe mensagem de erro: "Usuário ou senha inválidos". O sistema não deve travar ou demorar mais que 3 segundos para responder.
+
+---
+
+**Caso 8 - ID: CT-008**
+*   **Título:** Tentativa de submeter o formulário com campos obrigatórios vazios.
+*   **Pré-condições:** Tela de login carregada.
+*   **Passos:**
+    1. Deixar o campo "Usuário" em branco.
+    2. Deixar o campo "Senha" em branco.
+    3. Clicar em "Entrar".
+*   **Resultado esperado:** Sistema não deve permitir o envio. Deve destacar os campos vazios com uma borda vermelha e exibir a mensagem: "Preencha o campo de usuário e senha".
+
+---
+
+**Caso 9 - ID: CT-009**
+*   **Título:** Verificar o comportamento do botão após múltiplos cliques consecutivos.
+*   **Pré-condições:** Credenciais válidas.
+*   **Passos:**
+    1. Preencher usuário e senha.
+    2. Clicar no botão "Entrar" 5 vezes seguidas muito rapidamente (antes do sistema carregar a próxima tela).
+*   **Resultado esperado:** O sistema deve processar apenas a primeira requisição. O botão deve ficar desabilitado (cinza) ou com um ícone de loading girando, impedindo que o usuário envie o formulário várias vezes.
+
+---
+
+**Caso 10 - ID: CT-010**
+*   **Título:** Teste de injeção de código no campo de login (Segurança).
+*   **Pré-condições:** Estar na tela de login.
+*   **Passos:**
+    1. Preencher o campo "Usuário" com: `' OR '1'='1` (tentativa de SQL Injection).
+    2. Preencher o campo "Senha" com: `' OR '1'='1`.
+    3. Clicar em "Entrar".
+*   **Resultado esperado:** O sistema não deve permitir o login. Deve exibir a mensagem padrão "Usuário ou senha inválidos" e **nunca** exibir erros técnicos (como códigos de banco de dados) na tela.
+
+---
+
+### Resumo para o Iniciante (5 Erros e 5 Acertos para cada tópico)
+
+#### Erros que Iniciantes Costumam Cometer:
+1.  **Ser Genérico:** Escrever "Verificar se o login funciona".
+    *   *Correto:* Descrever exatamente o que acontece (redireciona para X, mostra Y).
+2.  **Misturar Passos:** Colocar "Preencher usuário e senha e clicar em entrar" em um passo só.
+    *   *Correto:* Um passo por ação.
+3.  **Esquecer as Pré-Condições:** Não mencionar que o usuário precisa estar cadastrado antes.
+    *   *Correto:* Sempre deixar claro o estado inicial do sistema.
+4.  **Testar só o que dá certo:** Fazer só o CT-001 e esquecer do resto.
+    *   *Correto:* O teste de verdade é quando tentamos quebrar o sistema (senha errada, campos vazios).
+5.  **Resultado Esperado Subjetivo:** Escrever "Sistema deve se comportar bem".
+    *   *Correto:* "Sistema deve exibir a mensagem de erro 'Usuário ou senha inválidos'".
+
+#### Acertos que um Bom Tester Faz:
+1.  **Pensa na Experiência:** Testa o Enter (CT-002) porque sabe que o usuário vai usar isso no dia a dia.
+2.  **Testa a Segurança:** Tenta invasões (CT-010) mesmo sendo iniciante, pensando como um "hacker" mau-caráter.
+3.  **Observa os Detalhes:** Verifica se a senha fica escondida (CT-003) para proteger a privacidade do usuário.
+4.  **Testa o Óbvio:** Sabe que o usuário pode digitar espaços sem querer (CT-004) e garante que o sistema trate isso.
+5.  **Evita Duplicidade:** Cria cenários únicos. O CT-006 (senha errada) e CT-007 (usuário errado) são parecidos, mas testam causas diferentes, o que é inteligente.
