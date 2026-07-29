@@ -1,0 +1,278 @@
+# Casos de Teste - Sistema de Login
+
+## Objetivo
+
+Documentar casos de teste funcionais para a funcionalidade de **Login** de um sistema, contemplando cenários de sucesso, falha e segurança.
+
+---
+
+# Estrutura do Caso de Teste
+
+Cada caso de teste possui os seguintes campos:
+
+1. ID
+2. Título
+3. Pré-condições
+4. Passos
+5. Resultado esperado
+
+---
+
+# Cenários de Sucesso
+
+## CT-001 - Login com sucesso usando credenciais válidas
+
+### Pré-condições
+
+- Estar na tela de login do sistema.
+- Possuir um cadastro ativo.
+- Usuário: `usuario_teste`
+- Senha: `Senha@123`
+
+### Passos
+
+1. Informar **usuario_teste** no campo Usuário.
+2. Informar **Senha@123** no campo Senha.
+3. Clicar no botão **Entrar**.
+
+### Resultado esperado
+
+O sistema deve redirecionar para a tela inicial (Dashboard) e exibir o nome do usuário logado no canto superior direito.
+
+---
+
+## CT-002 - Login utilizando a tecla Enter
+
+### Pré-condições
+
+- Estar na tela de login.
+
+### Passos
+
+1. Informar usuário válido.
+2. Informar senha válida.
+3. Pressionar a tecla **Enter**.
+
+### Resultado esperado
+
+O sistema deve realizar o login normalmente e redirecionar para o Dashboard.
+
+---
+
+## CT-003 - Máscara da senha
+
+### Pré-condições
+
+- Estar na tela de login.
+
+### Passos
+
+1. Selecionar o campo Senha.
+2. Digitar **Senha@123**.
+3. Observar os caracteres exibidos.
+
+### Resultado esperado
+
+A senha deve aparecer mascarada (•••••• ou ****), protegendo sua visualização.
+
+---
+
+## CT-004 - Login com espaços antes do usuário
+
+### Pré-condições
+
+- Usuário cadastrado.
+
+### Passos
+
+1. Informar `" usuario_teste"` (com espaço no início).
+2. Informar a senha correta.
+3. Clicar em **Entrar**.
+
+### Resultado esperado
+
+O sistema deve remover automaticamente o espaço em branco e realizar o login com sucesso.
+
+---
+
+## CT-005 - Login com senha contendo caracteres especiais
+
+### Pré-condições
+
+- Usuário cadastrado.
+- Senha: `Teste#2024`
+
+### Passos
+
+1. Informar o usuário.
+2. Informar a senha `Teste#2024`.
+3. Clicar em **Entrar**.
+
+### Resultado esperado
+
+O sistema deve aceitar caracteres especiais e permitir o login normalmente.
+
+---
+
+# Cenários de Falha
+
+## CT-006 - Usuário correto e senha incorreta
+
+### Pré-condições
+
+- O usuário **joao.silva** deve estar cadastrado.
+
+### Passos
+
+1. Informar `joao.silva`.
+2. Informar `SenhaErrada123`.
+3. Clicar em **Entrar**.
+
+### Resultado esperado
+
+O sistema deve exibir:
+
+> **Usuário ou senha inválidos**
+
+Não deve informar se o erro ocorreu no usuário ou na senha.
+
+---
+
+## CT-007 - Usuário inexistente
+
+### Pré-condições
+
+Nenhuma.
+
+### Passos
+
+1. Informar `usuario_que_nao_existe`.
+2. Informar qualquer senha.
+3. Clicar em **Entrar**.
+
+### Resultado esperado
+
+O sistema deve apresentar:
+
+> **Usuário ou senha inválidos**
+
+O tempo de resposta não deve ultrapassar **3 segundos**.
+
+---
+
+## CT-008 - Campos obrigatórios vazios
+
+### Pré-condições
+
+Tela de login carregada.
+
+### Passos
+
+1. Deixar os campos vazios.
+2. Clicar em **Entrar**.
+
+### Resultado esperado
+
+O sistema deve impedir o envio e apresentar:
+
+> **Preencha o campo de usuário e senha**
+
+Além disso, os campos devem ficar destacados em vermelho.
+
+---
+
+## CT-009 - Múltiplos cliques no botão Entrar
+
+### Pré-condições
+
+- Credenciais válidas.
+
+### Passos
+
+1. Informar usuário e senha.
+2. Clicar cinco vezes rapidamente no botão **Entrar**.
+
+### Resultado esperado
+
+Apenas uma solicitação deve ser processada.
+
+O botão deve ficar desabilitado ou apresentar um indicador de carregamento (loading).
+
+---
+
+## CT-010 - Tentativa de SQL Injection
+
+### Pré-condições
+
+- Estar na tela de login.
+
+### Passos
+
+1. Informar no usuário:
+
+```text
+' OR '1'='1
+```
+
+2. Informar na senha:
+
+```text
+' OR '1'='1
+```
+
+3. Clicar em **Entrar**.
+
+### Resultado esperado
+
+O sistema deve impedir o login.
+
+Deve exibir apenas:
+
+> **Usuário ou senha inválidos**
+
+Nenhuma mensagem técnica do banco de dados deve ser exibida.
+
+---
+
+# Resumo
+
+## Erros que iniciantes costumam cometer
+
+1. Escrever casos de teste muito genéricos.
+2. Colocar várias ações em um único passo.
+3. Esquecer de informar as pré-condições.
+4. Testar apenas cenários de sucesso.
+5. Escrever resultados esperados vagos.
+
+---
+
+## Boas práticas de um Analista de QA
+
+- Criar casos de teste claros e objetivos.
+- Descrever um passo por ação.
+- Definir corretamente as pré-condições.
+- Testar cenários positivos e negativos.
+- Validar requisitos de segurança.
+- Verificar a experiência do usuário.
+- Testar entradas inválidas e situações inesperadas.
+- Garantir que mensagens de erro sejam claras.
+- Evitar duplicidade de casos de teste.
+- Documentar resultados esperados de forma objetiva.
+
+---
+
+# Conclusão
+
+A elaboração de casos de teste detalhados é uma prática essencial no processo de Garantia da Qualidade (QA). A documentação adequada permite validar o funcionamento esperado do sistema, identificar falhas antes da entrega ao usuário e garantir maior confiabilidade da aplicação.
+
+Neste conjunto de casos de teste foram abordados cenários de sucesso, falha, usabilidade e segurança, proporcionando uma cobertura mais completa da funcionalidade de login.
+
+---
+
+# Autor
+
+**Mario Marinho**
+
+- Curso: Análise e Desenvolvimento de Sistemas
+- Disciplina: Teste de Software (QA)
+- Instituição: IMES / Aponti Academy
