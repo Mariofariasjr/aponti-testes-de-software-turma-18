@@ -1,3 +1,4 @@
+
 # Casos de Teste - Sistema de Login
 
 ## Objetivo
@@ -232,6 +233,34 @@ Deve exibir apenas:
 
 Nenhuma mensagem técnica do banco de dados deve ser exibida.
 
+---
+
+# Resumo
+
+## Erros que iniciantes costumam cometer
+
+1. Escrever casos de teste muito genéricos.
+2. Colocar várias ações em um único passo.
+3. Esquecer de informar as pré-condições.
+4. Testar apenas cenários de sucesso.
+5. Escrever resultados esperados vagos.
+
+---
+
+## Boas práticas de um Analista de QA
+
+- Criar casos de teste claros e objetivos.
+- Descrever um passo por ação.
+- Definir corretamente as pré-condições.
+- Testar cenários positivos e negativos.
+- Validar requisitos de segurança.
+- Verificar a experiência do usuário.
+- Testar entradas inválidas e situações inesperadas.
+- Garantir que mensagens de erro sejam claras.
+- Evitar duplicidade de casos de teste.
+- Documentar resultados esperados de forma objetiva.
+
+---
 
 # Conclusão
 
